@@ -1,2 +1,2 @@
 # swe1-app
-SE Project
+SE Project Fall 2023
