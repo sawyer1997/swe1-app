@@ -2,12 +2,12 @@ language: python
 python:
   - "3.8"
 install:
-  - pip install -r mysite/requirements.txt
+  - pip install -r requirements.txt
 script:
-  - black --check mysite
-  - flake8 mysite --exclude=migrations
+  - black --check .
+  - flake8 --exclude=migrations .
   - pytest
-  - coverage run --source=mysite mysite/manage.py test
+  - coverage run --source=mysite,polls, manage.py test
 
 after_script:
   - python -m coveralls
