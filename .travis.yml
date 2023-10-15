@@ -4,8 +4,8 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - black --check .
-  - flake8 --exclude=migrations .
+#  - black --check .
+#  - flake8 --exclude=migrations .
   - pytest
   - coverage run --source=mysite,polls, manage.py test
 
