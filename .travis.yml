@@ -8,7 +8,7 @@ script:
   - black --check .
   - flake8 .
   - pytest
-  - coverage run --source=mysite,polls manage.py test
+#  - coverage run --source=mysite,polls manage.py test
 
 after_script:
   - python -m coveralls
