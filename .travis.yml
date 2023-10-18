@@ -1,13 +1,14 @@
 language: python
+os: linux
 python:
   - "3.8"
 install:
   - pip install -r requirements.txt
 script:
-#  - black --check .
-#  - flake8 --exclude=migrations .
+  - black --check .
+  - flake8 .
   - pytest
-  - coverage run --source=mysite,polls, manage.py test
+  - coverage run --source=mysite,polls manage.py test
 
 after_script:
   - python -m coveralls
@@ -17,8 +18,8 @@ deploy:
   access_key_id: $ACCESSKEYID
   secret_access_key: $SECRETACCESSKEY
   region: "us-west-2"
-  app: "swe1-app"
-  env: "django-env"
-  bucket_name: "elasticbeanstalk-us-west-2-135467027477"
+  app: "polls"
+  env: "Polls-env"
+  bucket: "elasticbeanstalk-us-west-2-135467027477"
   on:
     branch: master

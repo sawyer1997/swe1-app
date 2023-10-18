@@ -1,0 +1,11 @@
+[tool.black]
+line-length = 121
+exclude = '''(
+    \.git/
+    |\.venv/
+    |__pycache__/
+    |build/
+    |dist/
+    |swe3.8/
+)'''
+exlcude = 'manage.py'
